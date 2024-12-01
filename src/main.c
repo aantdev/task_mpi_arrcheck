@@ -1,19 +1,8 @@
 #include <mpi.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
 
-#include "../include/front.h"
+#include "../include/display.h"
 #include "../include/utils.h"
-
-// Fill array with ints (user input)
-void fill_array(int* arr, int count); 
-// Print front in nicer way, 
-// optional index (^) to point at element of choice (-1 to disable)
-// num_or_comma to specify, point to num, or between nums (0 - on num, 1 - between, -1 - ignore)
-// basic util, return minimum element
-int min(int* arr, int count);
-void read_int(int* target);
 
 int main(int argc, char** argv){
     // Init the thing
@@ -76,11 +65,11 @@ int main(int argc, char** argv){
 
         putchar('\n');
         if (count == 0){
-            arr_front(int_list, N, -1, -1);
+            display_arr(int_list, N, -1, -1);
             printf("This array is sorted in ascending order.\n");
         }else {
             int fail_index = min(returns, count);
-            arr_front(int_list, N, fail_index, 1);
+            display_arr(int_list, N, fail_index, 1);
             printf("Ascending order breaks on these indexes: %d-%d\n", 
                                                     fail_index-1, fail_index);
         }

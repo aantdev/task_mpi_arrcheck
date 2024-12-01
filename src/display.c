@@ -1,4 +1,4 @@
-#include "../include/front.h"
+#include "../include/display.h"
 
 int int_len(int n) {
     
@@ -17,7 +17,7 @@ int int_len(int n) {
     return count;
 }
 
-void arr_front(int* arr, int count, int term_index, int num_or_comma){
+void display_arr(int* arr, int count, int term_index, int num_or_comma){
     putchar('[');
     for (int i = 0; i < count; i++) {
         if (i == count-1) { 

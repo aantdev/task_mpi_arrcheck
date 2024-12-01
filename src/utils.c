@@ -1,5 +1,5 @@
 #include "../include/utils.h"
-#include "../include/front.h"
+#include "../include/display.h"
 
 int min(int* arr, int count){
     int min = arr[0];
@@ -60,7 +60,7 @@ void fill_array(int* arr, int count){
         system("clear");
 
         printf("Numbers left: %d\n", count - i);
-        arr_front(arr, count, i, 0);
+        display_arr(arr, count, i, 0);
         read_int(&arr[i]);
 
         system("clear");

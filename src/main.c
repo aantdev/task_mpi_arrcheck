@@ -4,17 +4,6 @@
 #include "../include/display.h"
 #include "../include/utils.h"
 
-int menu(){
-
-    int pick = 0;
-    while (pick != 1 && pick != 2) {
-        system("clear");
-        printf("Choose action:\n1) Check list\n2) Abort\n");
-        read_int(&pick);
-    }
-
-    return pick;
-}
 
 int main(int argc, char** argv){
     // Init the thing
@@ -116,7 +105,6 @@ int main(int argc, char** argv){
             if (arr == NULL) MPI_Abort(MPI_COMM_WORLD, 11);
             MPI_Recv(arr, n, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
-            // Distribute comparisons across ALL processes
             for (int i = proc_id - 1; i < n - 1; i += (proc_c - 1)) {
                 
                 // debug print lol

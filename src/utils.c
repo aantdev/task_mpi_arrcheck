@@ -1,6 +1,7 @@
 #include "../include/utils.h"
 #include "../include/display.h"
 
+// basic util, find min in arr.
 int min(int* arr, int count){
     int min = arr[0];
     for (int i = 1; i < count; i++) {
@@ -12,7 +13,7 @@ int min(int* arr, int count){
 }
 
 void read_int(int* target){
-    long a;
+    int a;
     char buf[1024]; // use 1KiB just to be sure
     int success; // flag for successful conversion
 
@@ -42,14 +43,16 @@ void read_int(int* target){
         else if (*endptr && *endptr != '\n')
         {
             // *endptr is neither end of string nor newline,
-            // so we didn't convert the *whole* input
+            // so we didn't convert the whole input
+            // This works against cases like "223df" and others.
             success = 0;
         }
         else
         {
             success = 1;
         }
-    } while (!success); // repeat until we got a valid number
+    // Repeat prompting until there is valid input
+    } while (!success); 
 
     *target = a;
 }

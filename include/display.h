@@ -3,9 +3,12 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "utils.h"
 
 // Get length of array
 int int_len(int n); 
+
+int menu();
 
 // Print front in nicer way, 
 // optional index (^) to point at element of choice (-1 to disable)

@@ -3,8 +3,11 @@
 int int_len(int n) {
     
     // For digit 0
-    if (n == 0) return 1;
     int count = 0;
+    if (n == 0) 
+        return 1;
+    if (n < 0) 
+        count++;
     while (n != 0) {
         // Increment count
         count++;

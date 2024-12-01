@@ -12,5 +12,4 @@ int int_len(int n);
 // num_or_comma to specify, point to num, or between nums (0 - on num, 1 - between, -1 - ignore)
 void display_arr(int* arr, int count, int term_index, int num_or_comma);
 
-void menu();
 #endif
